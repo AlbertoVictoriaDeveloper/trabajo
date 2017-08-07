@@ -1,0 +1,16 @@
+#chartdivBarras {
+  position: absolute;
+  top: 31px;
+  left: -5px;
+  width : 385px;
+  height : 459px;
+  cursor: pointer;
+}
+
+#chartdiv {
+  position: absolute;
+  top: 9%;
+  left: -6%;
+  width : 580px;
+  height : 440px;
+}

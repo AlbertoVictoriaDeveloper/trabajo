@@ -1,0 +1,71 @@
+<div class="row">
+	<div class="col-md-12">
+<div class="btn-group pull-right">
+</div>
+<div class="card">
+  <div class="card-header" data-background-color="blue">
+      <h4 class="title">Tickets Gestionados </h4>
+  </div>
+  <div class="card-content table-responsive">
+     
+
+		<?php
+	  if(!empty($historyDatos)){
+			// si hay usuarios
+			?>
+			<table id="serviceadminH" class="display" cellspacing="0" width="100%" >
+			<thead>
+	        <th >#</th>
+                <th >Tipo de Servicio</th>
+                <th>Departamento</th>
+                <th>Personal que realizo el  Servicio</th>
+                <th>Fecha de Solicitud</th>
+                <th>Fecha  de Termino</th>
+                <th>Tiempo de Respuesta</th>
+			</thead>
+                      
+			<?php
+
+			foreach($historyDatos as  $datos) 
+                            {
+                            $fecha1 = new DateTime( $datos['fecha_servicio_inicio']);
+                            $fecha2 = new DateTime($datos['fecha_servicio_fin']);
+                            $fecha = $fecha1->diff($fecha2);
+                            $hora =  $fecha->h; 
+                            $minutos = $fecha->i; 
+                            $segundos = $fecha->s;
+                            $fechaCompleta = $hora."H ".$minutos. "M " .$segundos."S ";
+				?>
+				<tr>
+			<td><?=  $datos['servicios_id']?></td>
+                        <td  data-toggle="tooltip" title="<?= $datos['observacionesTicket']?>" ><?= $datos['servicio'] ?></td>
+                        <td><?= $datos['nombre_depa'] ?></td>
+                        <td><?=  $datos['nombre_personal'];  ?> </td>
+                         <td><?= $datos['fecha_servicio_inicio'];  ?> </td>
+                         <td><?= $datos['fecha_servicio_fin'];  ?> </td>
+                        <td><?=  $hora == 0 &&  $minutos <= 15 ? "<font color ='#3e8100'>".$fechaCompleta."</font>":"",
+                                   $hora == 0 &&  $minutos <= 30 && $minutos >=16 ? "<font color ='#fc6700'>".$fechaCompleta."</font>":"",
+                                    $hora == 0 &&  $minutos <= 59 && $minutos >=31 ? "<font color ='red'>".$fechaCompleta."</font>":"", 
+                                   $hora > 1 ? "<font color ='red'>".$fechaCompleta."  CRITICO  </font>":""; ?></td>
+				</tr>
+				<?php
+
+			}
+			?>
+			</table>
+			</div>
+			</div>
+			<?php
+
+
+
+		}else{
+			echo "<p class='alert alert-danger'>No hay Servicios</p>";
+		}
+
+
+		?>
+
+
+	</div>
+</div>

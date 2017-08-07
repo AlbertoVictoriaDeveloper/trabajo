@@ -1,0 +1,87 @@
+
+<div class="row">
+	<div class="col-md-12">
+<div class="btn-group pull-right">
+</div>
+<div class="card">
+  <div class="card-header" data-background-color="blue">
+      <h4 class="title">Tickets a Realizar  </h4>
+  </div>
+  <div class="card-content table-responsive">
+		<?php
+		  if(!empty($datosSoporte)){
+			// si hay usuarios
+			?>
+			<table id="serviceAdmin" class="display " cellspacing="0" width="100%">
+			<thead>
+	        <th >#</th>
+                <th><center>Nombre del Solicitante</center></th>
+                 <th >Puesto</th>
+                <th >Tipo de Servicio</th>
+                <th>Departamento</th>
+                 <th>Fecha Solicitud</th>
+                     <th>Estatus de Servicio</th>
+                   <th>Estatus</th>
+                   <th>Realiza</th>
+                  <th>Observaciones</th>
+                   <th></th>
+			</thead>
+			<?php
+			foreach($datosSoporte as  $datos){
+				$i++; 
+				?>
+				<tr>
+            <td > <?=  $datos['servicios_id']   ?> </td>          
+                                 <td><?= $datos['nombre_personal'] ?></td>
+        <td><?= $datos['puesto'] ?></td>
+        <td  data-toggle="tooltip" title="<?= $datos['observaciones']?>"> <?= $datos['servicio'] ?></td>
+        <td><?= $datos['nombre_depa']; ?></td>
+      <td><?=  $datos['fecha_servicio_inicio'];  ?></td>
+ 
+  <td><select  name="statusTicket" id="statusTicket<?=$i?>"   onchange="guardarTicket(<?=$i?>)" required>
+                                        <option  value = "" selected>Seleccione una Opción</option>
+
+       <option value="2">En Proceso</option>
+      <option value="3">Terminado</option>                              
+                                      
+</select></td>
+      
+      <td id="textEstatus<?=$i?>" value="" ><?= ($datos['status']== 1)?"<font color='#F10A0A'> Abierto</font> ": "" ,
+                  ($datos['status']== 2)?"<font color='#FF9700'>En Proceso</font>": "" ,
+                  ($datos['status']== 3)?"<font color='#079000'>Terminado</font>": "" ;                             
+  ?>
+  </td>
+
+<td><?= $datos['asignacion'];  ?></td> 
+
+  <td> <input type="text" id="observaciones<?=$i?>" onkeydown="limitar(<?=$i?>)"   name="observaciones"  readonly>   </td>   
+<td> <button class="btn btn-info btn-xs" id="idservice<?=$i?>"    value="<?=   $datos['servicios_id']   ?>"    data-toggle="modal" data-target="#myModal7"           name="idservice" onclick="saveTicket(<?=$i?>)" type="button" disabled><i class="fa fa-save"></i></button>   </td> 
+      <input type="hidden" id="idAsignacion<?=$i?>"  value="<?=    $datos['idasignaciones']   ?>"   name="idAsignacion" >
+      <input type="hidden" id="idPersonal<?=$i?>"  value="<?=  $datos['usuarios_id']  ?>"   name="idPersonal" >
+      <input type="hidden" id="tipoServicio<?=$i?>"  value="<?= $datos['servicio']  ?>"   name="tipoServicio" >
+      <input type="hidden" id="observacionClient<?=$i?>"  value="<?= $datos['observaciones']  ?>"   name="observacionClient" >
+      <input type="hidden" id="atiende<?=$i?>"  value="<?=  $datosToken[0]['nombre_personal']  ?>"   name="atiende" >
+       <input  type="hidden" id="fechaInicio<?=$i?>"    value="<?=$datos['fecha_servicio_inicio']?>" name="fechaInicio">
+         
+      </tr>
+				<?php
+ 
+			}
+			?>
+			</table>
+			</div>
+			</div>
+			<?php
+
+
+
+		}else{
+			echo "<p class='alert alert-danger'>No hay Servicios</p>";
+		}
+
+
+		?>
+
+
+	</div>
+</div>

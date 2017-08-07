@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/helpDesk/config/bd.ini</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/controller/controllerReportes.php</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/view/headers/layoutSuperAdmin.phtml</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/index.php</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/view/historyAdminView.phtml</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/sendMail/sendCorreo.php</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/gestorMysql/conexion.php</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/servicioAdmin.php</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/controller/controllerMail.php</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/model/modelSoporte.php</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/historySuperAdmin.php</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/controller/controllerUsuarios.php</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/model/userModel.php</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/guardarTicket.php</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/public/js/querys/guardarSoporte.js</file>
+            <file>file:/C:/xampp/htdocs/helpDesk/historyClient.php</file>
+        </group>
+    </open-files>
+</project-private>

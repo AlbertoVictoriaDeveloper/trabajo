@@ -1,0 +1,53 @@
+<div class="row">
+	<div class="col-md-12">
+<div class="btn-group pull-right">
+</div>
+<div class="card">
+  <div class="card-header" data-background-color="blue">
+      <h4 class="title">DIRECTORIO INTERNO DE EXTENSIONES</h4>
+  </div>
+  <div class="card-content table-responsive">
+		<?php
+		  if(!empty( $datosDirectorio)){
+			// si hay usuarios
+			?>
+			<table  id="directoryL" class="display" cellspacing="0" width="100%">
+			<thead>
+	      <th width="5%">#</th>
+                <th width="24%">Nombre</th>
+                <th width="27%">Puesto</th>
+                 <th width="27%">Extension</th>
+
+			</thead>
+			<?php
+			foreach($datosDirectorio as  $datos){
+				$i++
+				?>
+				<tr>
+			<td><?=  $i?></td>
+                        <td><?= $nombre = utf8_encode($datos['nombre']); ?></td>
+                        <td><?= utf8_encode($datos['puesto']) ?></td>
+                        <td><?= utf8_encode($datos['extension']); ?> </td>
+
+				</tr>
+				<?php
+
+			}
+			?>
+			</table>
+			</div>
+			</div>
+			<?php
+
+
+
+		}else{
+			echo "<p class='alert alert-danger'>No hay Usuarios</p>";
+		}
+
+
+		?>
+
+
+	</div>
+</div>

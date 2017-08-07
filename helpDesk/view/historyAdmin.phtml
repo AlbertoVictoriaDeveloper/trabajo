@@ -1,0 +1,53 @@
+<div class="row">
+	<div class="col-md-12">
+<div class="btn-group pull-right">
+</div>
+<div class="card">
+  <div class="card-header" data-background-color="blue">
+      <h4 class="title">Servicios terminados</h4>
+  </div>
+  <div class="card-content table-responsive">
+		<?php
+		  if(!empty($datosSoporteHistory )){
+			// si hay usuarios
+			?>
+			<table  id="serviceAdminH" class="display" cellspacing="0" width="100%">
+			<thead>
+	      <th width="5%">N°</th>
+                <th width="24%">Tipo de Servicio</th>
+                <th width="27%">Departamento</th>
+                 <th width="27%">Fecha de Servicio</th>
+
+			</thead>
+			<?php
+			foreach( $datosSoporteHistory  as  $datos){
+				
+				?>
+				<tr>
+			<td><?=  $datos['servicios_id']?></td>
+                        <td  data-toggle="tooltip" title="<?= $datos['observacionesTicket'] ?>"><?= $datos['servicio'] ?></td>
+                        <td><?= $datos['nombre_derpartamento'] ?></td>
+                        <td><?= $datos['fecha_servicio_inicio']; ?> </td>
+
+				</tr>
+				<?php
+
+			}
+			?>
+			</table>
+			</div>
+			</div>
+			<?php
+
+
+
+		}else{
+			echo "<p class='alert alert-danger'>No hay Servicios</p>";
+		}
+
+
+		?>
+
+
+	</div>
+</div>

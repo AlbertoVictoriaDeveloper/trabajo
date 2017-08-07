@@ -1,0 +1,71 @@
+<div class="row">
+	<div class="col-md-12">
+<div class="btn-group pull-right">
+</div>
+<div class="card">
+  <div class="card-header" data-background-color="blue">
+      <h4 class="title">Usuarios</h4>
+  </div>
+  <div class="card-content table-responsive">
+       <a href="newUser.php" class="btn btn-info"><i class="fa fa-user-plus"></i> Nuevo Usuario</a>
+		<?php
+		   if(!empty($usuariosDatos)){
+			// si hay usuarios
+			?>
+
+			<table id="usuarioRecepcion" class="display " cellspacing="0" width="100%">
+			<thead>
+	        <th >#</th>
+                <th >No Empleado</th>
+                <th>Nombre Empleado</th>
+                <th>Email</th>
+                <th>Extension</th>
+                <th>Movil</th>
+                <th>Puesto</th>
+                <th>Area</th>
+                <th>Fecha Ingreso</th>
+                 <th>Fecha Baja</th>
+                 <th>Estatus</th>
+                 <th></th>
+			</thead>
+                      
+			<?php
+  
+			foreach($usuariosDatos as  $datos){
+                          $i++;
+				?>
+				<tr>
+                                    <td><?=  $datos['usuarios_id'];?></font></td>
+                        <td><?= $datos['username'];?></td>
+                        <td><?= $datos['nombre_personal']; ?></td>
+                            <td><?= $datos['email']== NULL ? "Sin Asignar":$datos['email'];?> </td>
+                        <td><?= $datos['extension'] == NULL ? "Sin Asignar" :$datos['extension'];  ?> </td>
+                         <td><?= $datos['movil'] == NULL ? "N/A":$datos['movil'];  ?> </td>
+                         <td><?=$datos['puesto'];?></td>
+                          <td><?=$datos['area'];?></td>
+                          <td><?=$datos['fecha_ingreso'];?></td>
+                          <td><?=$datos['fecha_baja']== NULL ? "N/A":$datos['fecha_baja'];?></td>
+                           <td><?=$datos['statusPerson']== 1 ? "<font color='#005305'>Activo</font>":"<font color='red'>Baja</fon>";?></td>
+                          <td> <button class="btn btn-default btn-xs"   id="editPerson<?=$i?>" value = "<?= $datos['usuarios_id'];?>"  onclick="editDatos(<?=$i;?>)"    type="button"><i class="fa fa-edit"></i></button>      
+                           <!--<button type="button" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>--></td>
+                           
+                                </tr>
+	      			<?php
+
+			}
+			?>
+			</table>
+			</div>
+			</div>
+			<?php
+
+}else{
+			echo "<p class='alert alert-danger'>No hay Servicios</p>";
+		}
+
+
+		?>
+
+
+	</div>
+</div>

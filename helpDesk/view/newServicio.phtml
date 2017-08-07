@@ -1,0 +1,78 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card">
+  <div class="card-header" data-background-color="blue">
+      <h4 class="title">Solicitud de  Ticket</h4>
+  </div>
+  <div class="card-content table-responsive">
+<form class="form-horizontal" role="form" method="post" action="guardarTicket.php">
+<!--
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">DEPARTAMENTO</label>
+    <div class="col-lg-10">
+<select name="departamento" id="departamento" class="form-control" required>
+                                        <option  value = "" selected>Seleccione una Opción</option>
+                                   <?php 
+                                    if(!empty($datosDerpatamento)){
+                                    foreach($datosDerpatamento as $departamentoNombre){
+                                        
+                                   echo  '<option value="'.$departamentoNombre['id'].'">' .$departamentoNombre['nombre_depa'].'</option>';
+                                    
+                                    }
+                
+                                    }else{
+                                         echo  '<option value=""> </option>'; 
+                                    }
+                                    ?> 
+</select>
+    </div>
+  </div>-->
+
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">TIPO SERVICIO</label>
+    <div class="col-lg-10">
+<select  name="servicio" id ="servicio" class="form-control" required>
+                                        <option  value = "" selected>Seleccione una Opción</option>
+                          <?php 
+                                    if(!empty($datosServicios)){
+                                    foreach($datosServicios as $nombreServicios){
+                                        
+                                   echo  '<option value="'.$nombreServicios['id'].'">' .$nombreServicios['servicio'].'</option>';
+                                    
+                                    }
+                
+                                    }else{
+                                         echo  '<option value=""> </option>'; 
+                                    }
+                                    ?> 
+                                      </select>
+
+    </div>
+  </div>    
+    
+      <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">FECHA SERVICIO</label>
+    <div class="col-lg-10">
+        <input type="text" class="form-control" name="fecha" id="fecha" value="<?php echo date("d/m/y H:i:s") ?>">
+      
+    </div>
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Descripcion del Servicio</label>
+    <div class="col-lg-10">
+    <textarea  name="desc" id="desc" class="form-control" required placeholder="Descripcion"></textarea>
+       <input type="hidden" name="idPersonal"  id ="idPersonal" value="<?php echo  $idPersonal ?>">
+       <input type="hidden" name="nombreCliente"  id ="nombreCliente" value="<?php echo  $nombreCliente ?>">
+       <input type="hidden" name="puestoCliente"  id ="puestoCliente" value="<?php echo  $puestoCliente ?>">
+       <input type ="hidden" name="departamento" id="departamento"    value="<?=$departamentoID; ?>" >    
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+ <!-- <button type="submit"  name="Enviar" class="btn btn-default">Guardar Servicio</button>--->
+ <button type="button" onclick="guardarServicio()"  name="Enviar"  data-toggle="modal" data-target="#myModal6" class="btn btn-default">Guardar Servicio</button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+</div>
