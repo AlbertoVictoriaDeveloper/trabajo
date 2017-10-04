@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ECD | VECI CALIDAD</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link href="./public/css/bootstrap.min.css" rel="stylesheet">
+<link href="./public/css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
+        rel="stylesheet">
+<link href="./public/css/font-awesome.css" rel="stylesheet">
+<link href="./public/css/style.css" rel="stylesheet">
+<link href="./public/css/pages/dashboard.css" rel="stylesheet">
+        <link href="./public/css/pgwmodal.min.css" rel="stylesheet">
+        <link href="./public/css/pgwmodal.css" rel="stylesheet">
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="agentesValidaciones.php"><img src="./public/img/logoveci.png" width=100  height=100 alt="Smiley face"> </a>
+      <div class="nav-collapse">
+        <ul class="nav pull-right">
+        
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-user"></i>    <?=    $datosVista['nombre']?> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="logut.php">Cerrar Session</a></li>
+            </ul>
+          </li>
+        </ul>
+      
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /navbar-inner --> 
+</div>
+<!-- /navbar -->
+<!----Menu ---->
+ <?php include   $datosVista['menu']; ?>
+<!--inicioMenu<--->
+<!-- /subnavbar -->
+
+<div class="main">
+  <div class="main-inner">
+    <div class="container">
+      <div class="row">
+        <div class="row">
+
+             <?php include   $datosVista['estadistica']; ?>
+
+            <?php include   $datosVista['template']; ?>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+     
+        <!---Fin -->
+        <!-- /span6 --> 
+      </div>
+      <!-- /row --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /main-inner --> 
+</div>
+<!-- /main -->
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="extra">
+  <div class="extra-inner">
+    <div class="container">
+
+
+      <!-- /row --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /extra-inner --> 
+</div>
+<!-- /extra -->
+<div class="footer">
+  <div class="footer-inner">
+    <div class="container">
+      <div class="row">
+          <div class="span12"><b> &copy;</b> <?= date('Y')?>  Especialistas Contacto Directo . </div>
+        <!-- /span12 --> 
+      </div>
+      <!-- /row --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /footer-inner --> 
+</div>
+<!-- /footer --> 
+<!-- Le javascript
+================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="./public/js/jquery-1.7.2.min.js"></script> 
+<script src="./public/js/excanvas.min.js"></script> 
+<script src="./public/js/chart.min.js" type="text/javascript"></script> 
+<script src="./public/js/bootstrap.js"></script>
+ <script src="./public/js/validarAudios.js"></script>
+ <script src="./public/js/pgw/pgwmodal.js"></script>
+ <script src="./public/js/pgw/pgwmodal.min.js"></script>
+<script language="javascript" type="text/javascript" src="./public/js/full-calendar/fullcalendar.min.js"></script>
+ 
+<script src="./public/js/base.js"></script> 
+<script>     
+
+    </script><!-- /Calendar -->
+</body>
+</html>

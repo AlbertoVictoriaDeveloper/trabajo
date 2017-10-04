@@ -1,0 +1,90 @@
+
+<div class="span12">
+          <div class="widget widget-table action-table">
+            <div class="widget-header"> <i class="icon-th-list"></i>
+              <h3>Agentes a Validar</h3>
+            </div>
+              
+
+              
+
+              
+              
+              
+              
+              
+            <!-- /widget-header -->
+            <div class="widget-content">
+                  <?php  if(!empty($datosusUsuariose))
+                {
+                    
+               ?>    
+                  
+              <table class="table table-striped table-bordered">
+            
+                  
+                  
+                <thead>
+                  <tr>
+                    <th> # </th>
+                    <th> Nombre Agente</th>
+                    <th> Numero de Agente</th>
+                    <th>Validaciones</th>
+                    <th>Estatus de LLamada</th>
+                    <th class="td-actions"> </th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <?php  
+                                   foreach ( $datosusUsuariose as $datos ){
+                                       $i++;
+                                   
+                                   ?>
+                  <tr>
+                    <td> <?= $i ?> </td>
+                    <td> <?= $datos['nombre_empleado'] ?></td>
+                    <td> <?= $datos['num_agente'] ?></td>
+                    <td> <?= $datos['contador'] ?></td>
+                                          <td>                         
+                                              <select name="tipoTipicacion" id="tipoTipicacion<?=$i?>" required="" >
+                       <option  value = "" selected>Seleccione una Opción</option>
+ 
+                                                          <?php 
+                                    if(!empty( $tipificacion)){
+                                        
+                                    foreach( $tipificacion as $datose){
+                                        
+                                   echo  '<option value="'.$datose['status_registro'].'">' .$datose['status_registro'].'</option>';
+                                    
+                                    }
+                
+                                    }else{
+                                         echo  '<option value=""> </option>'; 
+                                    }
+                                    ?>              
+</select>      
+                                       
+                                          </td>
+                    
+                     
+                                          <td class="td-actions"><input type="hidden"  id="idUser"  value = "<?= $datosVista['id_user'] ?>" name="idUser">    <input type="hidden"  id="nombreUser"  value = "<?=$datosVista['nombre']?>" name="nombreUser">            <button  class="btn btn-info btn-small" id="idAgente<?=$i?>" name='idAgente' onclick="validareAudios(<?=$i?>)" value="<?=  $datos['num_agente']?>"     ><i class="btn-icon-only icon-pencil"> </i></button></td>
+                  </tr>  
+                  <?php 
+                }                  
+
+                  ?>
+                </tbody>
+              </table>
+               <?php
+                }else{
+               echo "no hay datos"; 
+                }
+               ?>
+                
+            </div>
+            <!-- /widget-content --> 
+          </div>
+          <!-- /widget --> 
+        
+          <!-- /widget -->
+        </div>

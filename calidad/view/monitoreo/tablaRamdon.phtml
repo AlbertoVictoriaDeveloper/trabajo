@@ -1,0 +1,35 @@
+<?php      if (!empty($datosFiltro)) { ?> 
+<table id="tabla_campana" class="display " cellspacing="0" width="100%"><thead>
+                            <tr role="row">
+                                <th>#</th>
+                                <th>Campaña Activa</th> 
+                                 <th>Validaciones</th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                              
+                                foreach ($datosFiltro as $datos) {
+                                          $i++;
+
+                                    ?>
+                                    <tr>
+                                        <td > <?php echo $i; ?> </td>
+                                        <td><?php echo  $datos['campana']; ?></td>
+                                         <td><button class="btn btn-info btn-xs" id="idMoni<?=$i?>"    value="<?=$idUser?>"    onclick="getLocalCampanas(<?=$i?>)"         type="button" ><i class="fa fa-save"></i></button>   </td>
+                                      
+                                    </tr>
+        <?php
+    }
+
+?>
+
+
+                        </tbody>
+                    </table>
+
+<?php  
+} else {
+     echo "<center><h1>Sin Audios Asignados</center><h1>";
+}
+?>

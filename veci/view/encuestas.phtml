@@ -1,0 +1,59 @@
+      <ul class="mainnav">
+          <li class="active">
+              <br>
+                       <iframe src="audioEscuchar.php?audio=<?= $rutaArchvivo ?>" width="210" height="45" frameborder="0"  >
+
+</iframe>
+              
+            
+          
+   
+          </li>
+          
+              <li class="active">
+             <b> Numero Marcado:</b>
+             <br>
+          <b>Agente</b>
+          <p> <?= $getDatosAudios[0]['numero_marcado'] ?> </p>  
+          </li>     
+                      <li class="active">
+                          <br>
+            
+                          <b>  Fecha y Hora de  Gestion: </b>
+                          <p> <?= $fechaCompleta ?> </p>  
+                          
+      
+          </li>     
+            <li class="active">
+                          <br>
+            
+                          <b>Campaña</b>
+                          <p> <?= $getDatosAudios[0]['nombre_campana'] ?> </p> 
+                          
+      
+          </li>  
+          
+          
+                 <li class="active">
+                          <br>
+            
+                          <b>Agente</b>
+                          <p> <?= $getDatosAudios[0]['agente'] ?> </p> 
+                          
+      
+          </li>  
+          
+                      <li class="active">
+                 <br>
+                           <p>     <b> Tipo de Gestion: </b>
+                  
+                         <select name="gestion" id="gestion"  Onchange="encuesta()" >
+                       <option  value = "" selected>Seleccione una Opción</option>
+                       <option  value = "Vacacional"> Vacacional</option>
+                       <option  value ="Corporativo">Corporativo</option>
+             
+ 
+</select>
+    </p>
+          </li>      
+      </ul> 

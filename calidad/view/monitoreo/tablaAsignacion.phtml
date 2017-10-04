@@ -1,0 +1,42 @@
+ <?php if (!empty( $datosAudioAsignacion)) { ?> 
+<table id="tabla_asignacion" class="display " cellspacing="0" width="100%"><thead>
+                            <tr role="row">
+                                <th>#</th>
+                                <th>Nombre campana</th> 
+                                 <th>Fecha Gestion</th>
+                                 <th>Agente</th>
+                                 <th> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                               
+                                foreach ($datosAudioAsignacion as $datose) {
+                               $datosAudiosEscucha = $datosSession->getAudiosEscucha($datose['id_audio']); 
+                                   foreach ($datosAudiosEscucha as $datos) {
+                                          $i++;
+                                    ?>
+                                    <tr>
+                                        <td > <?php echo $i; ?> </td>
+                                        <td><?php echo  $datos['nombre_campana']; ?></td>
+                                        <td><?php echo  $datos['fecha_gestion']; ?></td>
+                                        <td><?php echo  $datos['agente']; ?></td>
+                                        <td><input type="hidden" value="<?=$idUser?>" id="idUser<?=$i?>" >  <button class="btn btn-info btn-xs" id="idAudi<?=$i?>"    value="<?=$datosAudiosEscucha[0]['id']?>"    onclick="getAudio(<?=$i?>)"         type="button" ><i class="fa fa-pencil"></i></button>   </td>
+                                      
+                                    </tr>
+        <?php
+                                  }
+                                  
+                                  }
+
+?>
+
+
+                        </tbody>
+                    </<table>
+                        
+                        <?php  
+                        } else {
+    echo "<center><h1>Sin Audios Asignados</center><h1>";
+}
+                        ?>

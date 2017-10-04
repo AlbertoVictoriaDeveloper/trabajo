@@ -1,0 +1,129 @@
+                <!-- START X-NAVIGATION VERTICAL -->
+                <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+
+                    <!-- SIGN OUT -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="#" class="mb-control" data-box="#mb-signout" title="Salir"><span class="fa fa-sign-out"></span></a>                        
+                    </li> 
+                    <!-- END SIGN OUT -->
+
+                    <li class="xn-icon-button pull-right active">
+                        <a href="#"><span class="fa fa-user"></span></a>
+                        
+                        <div class="panel panel-primary  xn-drop-left xn-panel-dragging ui-draggable" >
+                            
+                            <div class="panel-heading ui-draggable-handle">
+                                <h3 class="panel-title"><span class="fa fa-user"></span> Perfil</h3>                                
+                                
+                            </div>
+                                    <div style="margin-left:2%">
+                                    <table class="table"  border="0">
+                                      <tr>
+                                        <td>User :  </td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                          <td>Nombre :<b>  <?= $datosVista['nombre'] ;  ?></b> </td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Fecha Alta :</td>
+                                        <td></td>
+                                      </tr>
+                                    </table>
+                                    </div>
+
+                                
+                            <div class="panel-footer text-center">
+                                <a href="pages-tasks.html">Modificar</a>
+                            </div>                            
+                        </div>                        
+                    </li>
+                   
+                     <!-- MESSAGES -->
+                    <div class=" hidden-xs" style="color: #FFF; margin-top:25px;">
+                       <li class="xn-icon-button pull-right">
+                        <div style=" width:200px;">
+						<?php echo $hoy = date("F j, Y, g:i a");   ?>
+                        </div>
+                       </li>
+                    </div>
+
+                    <!-- END MESSAGES -->
+                    
+                   
+                </ul>
+                <!-- END X-NAVIGATION VERTICAL -->                     
+         
+                 <!-- PAGE TITLE -->
+                <div class="page-title">                    
+                    <h1><span class="fa fa-bar-chart-o" title="Encuesta De Servicio"></span><?=  $datosVista['texto']; ?></h1>
+                </div> 
+                <!-- END PAGE TITLE --> 
+                
+                <!-- PAGE CONTENT WRAPPER -->
+                <div class="page-content-wrap">
+                
+                
+                
+                <div class="row">
+                        
+                       
+             <!-- INICO FILTROS -->      
+     
+              <!--- filtros--!>
+             
+             <!-- FIN Filtros -->     
+                     
+                     <div class="col-md-4" >
+                        <div >
+                        
+                                  <div class="col-md-4"></div>
+                                  <div class="col-md-2"></div>    
+                                  <div class="col-md-6">
+
+                                       
+                                   </div>             
+                              
+                                  
+                         </div>         
+                     </div>
+                       <div class="col-md-12"><br></div>                   
+                      <!-- CARGANDO -->
+                        <div id='cargando' class="col-md-12" style="display:none; position: fixed; margin-top:10%; height:40%; width:100%; background-color:#125c86; z-index:9100" >
+                           <center>
+                             <div style="margin-top:10%">
+                                <h1 style="color:#FFF"> <strong>CARGANDO .... <!--<img src="img/loaders/gif-load.gif" > --> </strong></h1> 
+                             </div>
+                           </center>
+                        </div>
+                      <!-- FIN CARGANDO-->  
+                           <div class="col-md-12" id="respuesta_preg"> 
+                              
+                                <!-- START DATATABLE EXPORT -->
+                                <div class="panel panel-default">
+                                    <?=  $datosVista['barraTexto']; ?> 
+                                    <br><br>
+                                    <div class="panel-body">
+<div class="container">
+               
+    
+    
+    
+    
+         <?php include ($datosVista['tabla']); ?>  
+    
+    
+    
+    
+    
+    
+                            
+                     
+                  </div>
+                  <!-- END ROW -->
+
+                <!-- END PAGE CONTENT WRAPPER -->
+            </div> 
+
+
